@@ -23,6 +23,7 @@ example = {
     ],
 }
 
+
 def get_step_probability(input_text, accumulated_steps):
     # Combine input and all steps so far
     full_text = input_text

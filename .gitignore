@@ -1,0 +1,11 @@
+.DS_Store
+settings.py
+__pycache__
+FINAL.csv
+*.jsonl
+fine_tuning_settings.yaml
+*.gguf
+output/
+.ruff_cache
+.venv
+.pytest_cache

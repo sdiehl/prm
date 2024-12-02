@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "prm"
+version = "0.1.0"
+description = "Utilities for training and evaluating models with process reward modeling."
+authors = ["sdiehl <stephen.m.diehl@gmail.com>"]
+readme = "README.md"
+packages = [{include = "prm", from = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+trl = "^0.12.1"
+transformers = "^4.46.3"
+datasets = "^3.1.0"
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.10.0"
+ruff = "^0.8.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

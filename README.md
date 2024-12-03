@@ -1,8 +1,17 @@
 # Process Reward Model
 
-This is a library for training and evaluating process reward models, which help provide step-wise feedback on reasoning processes for language models.
+This is a library for training and evaluating **process reward models** and then using them to guide inference with process-guided decoding. We can currently use them for:
+
+* Best-of-N decoding
+* Tree search decoding
+* Rollout Tree Search decoding (experimental)
 
 ## Overview
+
+The library consists of two main modules:
+
+* `prm.trainer`: For training process reward models
+* `prm.decode`: For using process reward models to guide inference
 
 ### Installation
 
@@ -90,6 +99,22 @@ See the `examples` directory for example training and inference scripts.
 poetry run python examples/train.py
 poetry run python examples/infer.py
 ```
+
+The `tree.py` example demonstrates step-wise decoding with a process reward model. We use the excellent [decoding](https://github.com/benlipkin/decoding/blob/main/decoding/generators.py) library to achieve this. It works by:
+
+1. Generating `n` candidate solution samples from the language model (`llm`)
+2. Use `step_scorer` PRM to rank and filter the candidates at each step/line break
+3. Use `final_scorer` PRM to rank the final beam of complete solutions
+4. Return the highest scoring solution path
+
+```python
+poetry install --with decode
+poetry run python examples/tree.py
+```
+
+> **Note**: The decoding functionality requires vLLM, which is currently only supported on Linux and uses an Nvidia GPU by default. For CPU-only usage, please look at the [vLLM CPU installation guide](https://docs.vllm.ai/en/latest/getting_started/cpu-installation.html).
+
+The `decoding` library also supports Best-Of-N and experimental support for RolloutTreeSearch which is a Monte-Carlo tree search algorithm for decoding which may also be useful to synthesize with PRM guided decoding.
 
 ## License
 

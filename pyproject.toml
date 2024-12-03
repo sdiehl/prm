@@ -16,6 +16,12 @@ datasets = "^3.1.0"
 black = "^24.10.0"
 ruff = "^0.8.0"
 
+[tool.poetry.group.decode]
+optional = true
+
+[tool.poetry.group.decode.dependencies]
+decoding = "^0.1.4"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"

@@ -1,10 +1,10 @@
 # Process Reward Model
 
-This is a library for training and evaluating **process reward models** and then using them to guide inference with process-guided decoding. We can currently use them for:
+This is a library for training and evaluating **process reward models** and then using them to guide inference with process-guided decoding. We can currently use the following decoding methods:
 
-* Best-of-N decoding
-* Tree search decoding
-* Rollout Tree Search decoding (experimental)
+* *Best-of-N decoding*
+* *Tree search decoding*
+* *Rollout Monte Carlo Tree Search decoding* (experimental)
 
 ## Overview
 
@@ -113,8 +113,6 @@ poetry run python examples/tree.py
 ```
 
 > **Note**: The decoding functionality requires vLLM, which is currently only supported on Linux and uses an Nvidia GPU by default. For CPU-only usage, please look at the [vLLM CPU installation guide](https://docs.vllm.ai/en/latest/getting_started/cpu-installation.html).
-
-The `decoding` library also supports Best-Of-N and experimental support for RolloutTreeSearch which is a Monte-Carlo tree search algorithm for decoding which may also be useful to synthesize with PRM guided decoding.
 
 ## License
 

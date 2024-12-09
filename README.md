@@ -1,10 +1,8 @@
 # Process Reward Model
 
-This is a library for training and evaluating **process reward models** and then using them to guide inference with process-guided decoding. We can currently use the following decoding methods:
+This project implements process reward modeling (PRM), a technique for training language models to evaluate and guide step-by-step reasoning processes. The core idea is to train a reward model that can score each intermediate step of a solution, rather than just the final answer. The model learns to distinguish between valid and invalid reasoning steps by training on examples labeled with positive (+) and negative (-) feedback.
 
-* *Best-of-N decoding*
-* *Tree search decoding*
-* *Rollout Monte Carlo Tree Search decoding* (experimental)
+This enables process-guided decoding where the model can evaluate multiple candidate solution paths and select the most promising ones at each step. The library provides both training capabilities (using HuggingFace's Trainer framework) and inference methods that use tree search to generate step-by-step solutions by incorporating the learned process rewards.
 
 ## Overview
 

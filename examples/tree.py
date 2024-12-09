@@ -1,3 +1,7 @@
+"""
+Example script for using tree search decoding with a process reward model.
+"""
+
 from transformers import AutoModelForCausalLM, AutoTokenizer
 from decoding.models import LanguageModel
 from prm.decode import tree_decode
@@ -19,13 +23,14 @@ Find the roots of the quadratic equation x^2 - 3x + 2 = 0.
 """
 
 
-def prm_decode(prompt: str, stop_words: list[str] = None) -> str:
+def prm_decode(prompt: str, stop_words: list[str]) -> str:
     # You can customize stop words or use default
     solution = tree_decode(prm_model, prm_tokenizer, llm, prompt, stop_words=stop_words)
     print("Problem:")
     print(prompt)
     print("Solution:")
     print(solution)
+    return solution
 
 
 if __name__ == "__main__":

@@ -89,9 +89,9 @@ def tree_decode(
     prm_tokenizer,
     llm,
     prompt: str,
-    stop_words: list[str] = None,
+    stop_words: list[str],
     seed: int = 42,
-) -> str:
+):
     """Use tree search to do step-wise decoding with a process reward model
 
     Args:
@@ -127,10 +127,10 @@ def best_of_n_decode(
     prm_tokenizer,
     llm,
     prompt: str,
+    stop_words: list[str],
     n: int = 5,
-    stop_words: list[str] = None,
     seed: int = 42,
-) -> str:
+):
     """Use best-of-n to do step-wise decoding with a process reward model
 
     Args:
@@ -163,12 +163,12 @@ def rollout_tree_decode(
     prm_tokenizer,
     llm,
     prompt: str,
-    stop_words: list[str] = None,
+    stop_words: list[str],
     n: int = 1,
     beam_width: int = 5,
     beam_factor: int = 3,
     seed: int = 42,
-) -> str:
+):
     """Use rollout tree search to do step-wise decoding with a process reward model
 
     Args:

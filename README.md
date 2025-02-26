@@ -1,3 +1,7 @@
+<p align="center">
+    <img src=".github/logo.jpeg" width="500px" alt="process reward model">
+</p>
+
 # Process Reward Model
 
 This project implements process reward modeling (PRM), a technique for training language models to evaluate and guide step-by-step reasoning processes. The core idea is to train a reward model that can score each intermediate step of a solution, rather than just the final answer. The model learns to distinguish between valid and invalid reasoning steps by training on examples labeled with positive (+) and negative (-) feedback.

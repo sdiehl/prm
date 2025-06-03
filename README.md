@@ -1,3 +1,5 @@
+**Deprecated: Use the [PRMTrainer](https://huggingface.co/docs/trl/main/en/prm_trainer) in trl**
+
 <p align="center">
     <img src=".github/logo.jpeg" width="500px" alt="process reward model">
 </p>
